@@ -1,0 +1,202 @@
+/* Start Home Projects container style */
+
+.homeProjectsContainer {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerProjectsContainer {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  position: relative;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.projectCircle {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background: linear-gradient(200deg, #d4d3d3, #7ba7fa);
+  border-radius: 50%;
+  filter: drop-shadow(2px 2px 8px rgba(64, 154, 238, 0.3));
+  animation: pulse 2s infinite ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectCircle:hover {
+  transform: scale(1.15) rotate(10deg);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.headerProjectsContainer h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #409aee;
+  background: linear-gradient(90deg, #409aee, #7ba7fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.homeProjectsContainer .projectsListContainer {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: start;
+}
+
+.projectsListContainer .projectContainer {
+  width: 100%;
+  max-width: 350px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectContainer:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.projectContainer .projectImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.projectContentContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.projectContentContainer h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7ba7fa;
+}
+
+.projectContentContainer .description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #cccccc;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projectContentContainer .startDate,
+.projectContentContainer .author {
+  font-size: 0.85rem;
+  color: #7ba7fa;
+}
+
+.projectLastContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.followProject {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6aa8f7, #3b78c5);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(64, 154, 238, 0.4);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+.followProject:hover {
+  background: linear-gradient(135deg, #5c9dec, #306bb1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(64, 154, 238, 0.5);
+}
+
+.followProjectShape {
+  width: 80px;
+  height: 50px;
+  background: linear-gradient(135deg, #7ba7fa, #409aee);
+  position: relative;
+  clip-path: polygon(
+    100% 0%,
+    /* Top right */ 35% 0%,
+    /* Before tail */ 0% 50%,
+    /* Tip of arrow (left) */ 35% 100%,
+    /* After tail */ 100% 100%,
+    /* Bottom right */ 85% 50% /* Inner tail curve */
+  );
+  box-shadow: 0 6px 16px rgba(64, 154, 238, 0.3);
+  animation: floatShape 3s ease-in-out infinite;
+  border-top-right-radius: 30% 100%;
+  border-bottom-right-radius: 30% 100%;
+  margin-left: 15px;
+  transform: rotate(-15deg); /* Angled toward button */
+  transition: transform 0.3s ease;
+}
+
+.followProjectShape:hover {
+  transform: scale(1.1) rotate(-10deg);
+}
+
+@keyframes floatShape {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-15deg);
+  }
+}
+
+/* End Home Projects container style */

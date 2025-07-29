@@ -1,0 +1,228 @@
+/* Start Home Services container style */
+.homeServicesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+  padding: 40px;
+}
+
+.homeServicesContainer .headerServicesContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.headerServicesContainer h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #b4bedf;
+  text-align: center;
+  border-bottom: rgb(255, 255, 255, 0.2) 8px solid;
+  border-top: rgb(255, 255, 255, 0.2) 8px solid;
+  padding: 0 10px 10px 0;
+  border-radius: 0 50% 0 50%;
+}
+
+.homeServicesContainer .servicesListContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.servicesListContainer .service {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.service .serviceCounter {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #f1d34a, #ffd700);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 0 0 20px 100px;
+}
+
+.service .serviceContainer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.serviceContainer .serviceImageContainer {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.serviceContainer .glassWindowOuter {
+  position: absolute;
+  width: 660px;
+  height: 760px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(241, 211, 74, 0.3);
+  box-shadow: 0 8px 40px rgba(241, 211, 74, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1;
+  transform: rotate(-2deg);
+}
+
+.serviceContainer .glassWindowInner {
+  position: absolute;
+  width: 630px;
+  height: 730px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2;
+  transform: rotate(1deg);
+}
+
+.serviceImageContainer img {
+  width: 600px;
+  height: 700px;
+  z-index: 3;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  position: relative;
+}
+
+.serviceArrow {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #f1d34a, #ffd700);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.3));
+}
+
+.serviceContainer .serviceArrow:hover {
+  transform: scale(1.1);
+}
+
+.serviceContainer .serviceContentContainer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 2rem;
+}
+
+.serviceContentContainer h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fdfdfd;
+  margin-bottom: 10px;
+}
+
+.serviceContentContainer .description {
+  color: #f0f0f0;
+  text-align: start;
+  width: 100%;
+  max-width: 350px;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: justify;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.serviceContentContainer .price {
+  color: #f1d34a;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.serviceContentContainer .servicePhoneContainer {
+  display: flex;
+  padding: 1rem 2rem;
+  max-width: 600px;
+  border-radius: 16px;
+  border: 1px solid rgba(241, 211, 74, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.serviceContentContainer .servicePhoneContainer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(241, 211, 74, 0.3);
+}
+
+.servicePhoneContainer .phone {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.servicePhoneContainer .phone span.phoneValue {
+  color: #f1d34a;
+  font-weight: 700;
+  margin-left: 0.3rem;
+  text-shadow: 0 0 5px rgba(241, 211, 74, 0.5);
+}
+
+.phone i {
+  margin-right: 0.5rem;
+  color: #f1d34a;
+}
+
+@media (max-width: 768px) {
+  .serviceContentContainer .servicePhoneContainer {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .servicePhoneContainer .phone {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .serviceArrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+}
+
+/* End Home Services container style */

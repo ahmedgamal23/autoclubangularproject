@@ -1,0 +1,106 @@
+<div class="articleContainer">
+  <div class="article">
+    <div class="articleImage">
+      <div class="imageContainer">
+        <img
+          class="mainImage"
+          [src]="images[currentImageIndex]"
+          alt="Article Image"
+        />
+
+        <div class="imageDot">
+          <a
+            *ngFor="let item of images; let i = index"
+            class="dot"
+            [ngClass]="{ active: currentImageIndex === i }"
+            (click)="goToImage(i)"
+          >
+            <i class="bi bi-circle-fill"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="articleContent">
+      <div>
+        <h1>{{ articlesHeader[currentArticleIndex] }}</h1>
+        <diV class="zoom">
+          <a (click)="zoomInClick()"><i class="bi bi-zoom-in"></i></a>
+          <p>{{ zoomLevel }}</p>
+          <a (click)="zoomOutClick()"><i class="bi bi-zoom-out"></i></a>
+        </diV>
+      </div>
+      <p class="content" [ngStyle]="{ 'font-size': zoomLevel + 'px' }">
+        {{ articles[currentArticleIndex] }}
+      </p>
+      <p class="publishAt">15-5-2025 10:50:12 Am</p>
+    </div>
+    <div class="articleAuthor">
+      <div class="authorImage">
+        <img src="https://picsum.photos/seed/picsum/200/300" alt="" />
+      </div>
+      <div class="authorInfo">
+        <p class="authorName">Ahmed Gamal</p>
+        <p class="phone">+201147893607</p>
+        <p class="city">cairo</p>
+        <p class="role">admin</p>
+      </div>
+    </div>
+    <div class="articleAccessories">
+      <div class="likeContainer">
+        <p>0</p>
+        <a role="button" tabindex="0"><i class="bi bi-hand-thumbs-up"></i></a>
+      </div>
+      <div class="dislikeContainer">
+        <p>0</p>
+        <a role="button" tabindex="0"><i class="bi bi-hand-thumbs-down"></i></a>
+      </div>
+      <div class="supportContainer">
+        <p>0</p>
+        <a role="button" tabindex="0"><i class="bi bi-heart-fill"></i></a>
+      </div>
+    </div>
+    <div class="articleComments">
+      <div class="enterArticleCommentsContainer">
+        <input type="text" name="text" id="comment" />
+        <a class="addComment" href=""><i class="bi bi-send-fill"></i></a>
+      </div>
+      <div class="viewArticlesCommentsContainer">
+        <div class="viewArticleComment">
+          <p>comment text</p>
+          <a href="" class="answer">answer</a>
+        </div>
+      </div>
+      <div class="loadMore">Load More Comments</div>
+    </div>
+  </div>
+  <!-- Pagination Bar -->
+  <div class="paginationBar">
+    <button
+      class="navButton"
+      (click)="prevArticle()"
+      [disabled]="currentArticleIndex === 0"
+    >
+      <i class="bi bi-arrow-left"></i>
+    </button>
+
+    <div class="pageNumbers">
+      <ng-container *ngFor="let article of articles; let i = index">
+        <button
+          class="pageNumber"
+          [class.active]="i === currentArticleIndex"
+          (click)="goToArticle(i)"
+        >
+          {{ i + 1 }}
+        </button>
+      </ng-container>
+    </div>
+
+    <button
+      class="navButton"
+      (click)="nextArticle()"
+      [disabled]="currentArticleIndex === articles.length - 1"
+    >
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+</div>
